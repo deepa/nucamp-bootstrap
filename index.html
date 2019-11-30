@@ -32,12 +32,9 @@
           </div>
           <div class="col col-md-4 col-xl-2 col-xs">
             <a
-              href="#reserveForm"
-              role="button"
+              data-toggle="modal"
+              data-target="#reserveModal"
               class="btn btn-lg btn-info"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              data-html="true"
               title="Or call us at <br /><strong>1-206-555-1234</strong>"
               >Reserve Campsite</a
             >
@@ -45,6 +42,79 @@
         </div>
       </div>
     </header>
+
+    <div id="reserveModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-info">
+            <div class="modal-title ">
+              <h3 class="text-white">
+                Reserve a Campsite
+              </h3>
+            </div>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form id="reserveForm">
+                <div class="row">
+                  <div class="col form-group row">
+                    <label
+                      for="numCampers"
+                      class="col-sm-6 col-form-label col-xs"
+                      >Number of Campers</label
+                    >
+                    <div class="col">
+                      <select
+                        name="numCampers"
+                        id="numCampers"
+                        class="col col-xs form-control"
+                      >
+                        <option selected>Select...</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col form-group row">
+                    <label for="date" class="col-sm-6 col-form-label col-xs"
+                      >Date</label
+                    >
+                    <div class="col">
+                      <input
+                        id="date"
+                        type="date"
+                        value="2019-11-22"
+                        class="col
+                            col-xs form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button class="btn btn-secondary" data-dismiss="modal">
+                      Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
       <div class="container">
@@ -297,7 +367,7 @@
         </div>
       </div>
 
-      <div class="row row-content align-items-center">
+      <!-- <div class="row row-content align-items-center">
         <div class="col col-sm-6 mx-auto">
           <div class="card">
             <h3 class="card-header bg-info text-white">
@@ -356,7 +426,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <footer class="site-footer">
@@ -391,10 +461,5 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
   </body>
 </html>
